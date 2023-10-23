@@ -1,0 +1,5 @@
+<div *ngFor="let modelInput of modelsInput">
+  <a [routerLink]="['prediction']" [state]="modelInput">{{
+    modelInput.vehicleType
+  }}</a>
+</div>

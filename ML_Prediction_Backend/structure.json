@@ -1,0 +1,604 @@
+[ 
+    {
+        "vehicleType": "Tractors", 
+        "fields": [
+            { 
+                "name": "original_manufacturer",
+                "displayName": "Manufacturer",
+                "isModel": true,
+                "type": "string", 
+                "mandatory": true,
+                "categoricalConstrain":{ 
+                    "values": [
+                        {
+                            "mark":   "GOLDONI",
+                            "displayName": "Model",
+                            "model":  ["90", "3050", "MAXTER 60 SN", "RONIN 50"]
+                        },
+                        {
+                            "mark":   "AGCO",
+                            "displayName": "Model",
+                            "model":  ["ALLIS 9670", "MT 685 D", "MT 738", "MT 875 B"]
+                        },
+                        {
+                            "mark":   "JOHN DEERE",
+                            "displayName": "Model",
+                            "model":  ["2130 LS", "5080 GV", "6150 M", "6410 SE", "8360 R", "9460 R"]
+                        },
+                        {
+                            "mark":   "FORD",
+                            "displayName": "Model",
+                            "model":  ["5600", "6610", "8210", "9700", "VERSATILE 9030"]
+                        },
+                        {
+                            "mark":   "JCB",
+                            "displayName": "Model",
+                            "model":  ["FASTRAC 135 T 65", "FASTRAC 2150 A", "FASTRAC 4190", "FASTRAC 8330"]
+                        },
+                        {
+                            "mark":   "NEW HOLLAND",
+                            "displayName": "Model",
+                            "model":  ["5070", "8670", "BOOMER 20", "T 4060 F", "TL 90", "WORKMASTER 50"]
+                        }
+                    ]
+                }
+            },
+            { 
+                "name": "operating_hours",
+                "displayName": "Operating hours",
+                "type": "number",
+                "mandatory": true,
+                "measureUnit": "hours", 
+                "numberConstrain": { 
+                    "minValue": 0, 
+                    "maxValue": 15000 
+                }
+            },
+            { 
+                "name": "year_of_manufacture",
+                "displayName": "Year",
+                "type": "number",
+                "mandatory": true,
+                "numberConstrain": { 
+                    "minValue": 1990, 
+                    "maxValue": 2022 
+                }
+            },
+            { 
+                "name": "country",
+                "displayName": "Country",
+                "type": "string",
+                "mandatory": true,
+                "categoricalConstrain":{
+                    "values":[
+                        "US", "NL", "DE", "IT", "DK", "BE", "GB",
+                        "FR", "PL", "ES", "CA", "FI", "UA", "CZ",
+                        "RO", "HU", "SK", "GR", "CN", "PE", "LT",
+                        "BR", "BG", "LV", "GE", "HR"
+                    ]
+                }
+            },
+            
+            { 
+                "name": "driver_pneumatic_seat",
+                "displayName": "Driver pneumatic seat",
+                "type": "boolean",
+                "mandatory": true 
+            }, 
+            { 
+                "name": "max_speed",
+                "displayName": "Max speed",
+                "type": "number",
+                "mandatory": true,
+                "measureUnit": "km/h", 
+                "numberConstrain": { 
+                    "minValue": 0, 
+                    "maxValue": 120 
+                }
+            },
+            { 
+                "name": "hydraulic_front_equipment",
+                "displayName": "Hydraulic front equipment",
+                "type": "boolean",
+                "mandatory": true 
+            }, 
+            { 
+                "name": "all_wheel_drive",
+                "displayName": "All wheel drive",
+                "type": "boolean",
+                "mandatory": true 
+            }, 
+             
+            { 
+                "name": "suspended_front_axle",
+                "displayName": "suspended front axle",
+                "type": "boolean",
+                "mandatory": true 
+            },
+            { 
+                "name": "power_output(kw)",
+                "displayName": "Machine power",
+                "type": "number",
+                "mandatory": true,
+                "measureUnit": "kw", 
+                "numberConstrain": { 
+                    "minValue": 0, 
+                    "maxValue": 500
+                }
+            }
+        ] 
+    },
+    {
+        "vehicleType": "Skit_steer_loaders", 
+        "fields": [
+            { 
+                "name": "original_manufacturer", 
+                "displayName": "Manufacturer", 
+                "isModel": true,
+                "type": "string", 
+                "mandatory": true,
+                "categoricalConstrain":{ 
+                    "values": [
+                        {
+                            "mark":   "Caterpillar",
+                            "displayName": "Model", 
+                            "model":  ["279D", "289D", "257D", "226D", "236D", "239D", "259D"]
+                        },
+                        {
+                            "mark":   "Gehl",
+                            "displayName": "Model", 
+                            "model":  ["SL1620", "SL3610", "SL4610", "SL6625","SL4635SX", "SL4835DXT", "SL7800"]
+                        },
+                        {
+                            "mark":   "Bobcat",
+                            "displayName": "Model", 
+                            "model":  ["443", "450B","553", "645", "741","773F","863F", "773G", "863GH", "T190","T300"]
+                        },
+                        {
+                            "mark":   "Thomas",
+                            "displayName": "Model", 
+                            "model":  ["T83", "T103", "T133", "T173", "T233", "T233HD", "T243"]
+                        },
+                        {
+                            "mark":   "BELLE(HK-Belle)",
+                            "displayName": "Model", 
+                            "model":  ["730", "740", "761", "7400", "7600", "731", "741"]
+                        },
+                        {
+                            "mark":   "Doosan",
+                            "displayName": "Model", 
+                            "model":  ["DSL 702"]
+                        },
+                        {
+                            "mark":   "New_Holland",
+                            "displayName": "Model", 
+                            "model":  ["LS170", "LS180", "LS150", "LS160"]
+                        }
+                    ]
+                } 
+            },
+            { 
+                "name": "weight_t",
+                "displayName": "Weight", 
+                "type": "number", 
+                "mandatory": true,
+                "measureUnit": "tons", 
+                "numberConstrain": { 
+                    "minValue": 0, 
+                    "maxValue": 20 
+                }
+            },
+            { 
+                "name": "ratedoperatingcapacity_kg",
+                "displayName": "Rated operating capacity",
+                "type": "number",
+                "mandatory": true,
+                "measureUnit": "kilos", 
+                "numberConstrain": { 
+                    "minValue": 0, 
+                    "maxValue": 1200 
+                }
+            },
+            { 
+                "name": "country",
+                "displayName": "Country", 
+                "type": "string",
+                "mandatory": true,
+                "categoricalConstrain":{
+                    "values":[
+                        "US", "NL", "DE", "IT", "DK", "BE", "GB",
+                        "FR", "PL", "ES", "CA", "FI", "UA", "CZ",
+                        "RO", "HU", "SK", "GR", "CN", "PE", "LT",
+                        "BR", "BG", "LV", "GE", "HR"
+                    ]
+                }
+            },
+            { 
+                "name": "bucketwidth_m",
+                "displayName": "Bucket capacity", 
+                "type": "number",
+                "mandatory": true,
+                "measureUnit": "m³", 
+                "numberConstrain": { 
+                    "minValue": 0, 
+                    "maxValue": 2
+                }
+            },
+            { 
+                "name": "driverprotection",
+                "displayName": "Driver protection", 
+                "type": "string",
+                "mandatory": true,
+                "categoricalConstrain":{
+                    "values":[ "Roll-over bar", "Cabin with ROPS", "Cabin", "Canopy" ]
+                }
+            }, 
+            { 
+                "name": "steeringmode",
+                "displayName": "Steering mode", 
+                "type": "string",
+                "mandatory": true,
+                "categoricalConstrain":{
+                    "values":[ "All-wheel steering", "tank steering" ]
+                }
+            },
+            { 
+                "name": "maxdischargeheight_m",
+                "displayName": "Max discharge height",
+                "type": "number",
+                "mandatory": true,
+                "measureUnit": "m", 
+                "numberConstrain": { 
+                    "minValue": 0, 
+                    "maxValue": 4 
+                }
+            },
+            { 
+                "name": "liftingforce_kn",
+                "displayName": "Lifting force", 
+                "type": "number",
+                "mandatory": true,
+                "measureUnit": "kilo neutons",
+                "numberConstrain": { 
+                    "minValue": 0, 
+                    "maxValue": 50 
+                }
+            },
+            { 
+                "name": "operating_hours",
+                "displayName": "Operating hours", 
+                "type": "number", 
+                "mandatory": true,
+                "measureUnit": "hours", 
+                "numberConstrain": { 
+                    "minValue": 0, 
+                    "maxValue": 10000 
+                }
+            },
+            { 
+                "name": "age_in_months",
+                "displayName": "Year", 
+                "type": "number",
+                "mandatory": true,
+                "numberConstrain": { 
+                    "minValue": 1990, 
+                    "maxValue": 2022 
+                }
+            }
+        ]    
+    },
+    {
+        "vehicleType": "Mini_excavators", 
+        "fields": [
+            { 
+                "name": "original_manufacturer",
+                "displayName":  "Manufacturer",
+                "isModel": true,
+                "type": "string", 
+                "mandatory": true,
+                "categoricalConstrain":{ 
+                    "values": [
+                        {
+                            "mark":   "Caterpillar",
+                            "displayName":  "Model",
+                            "model":  ["304E CR", "305E CR", "303 CR", "303.5E CR", "305.5E CR", "300.9D"]
+                        },
+                        {
+                            "mark":   "Hitachi",
+                            "displayName":  "Model",
+                            "model":  ["EX 8", "EX 22", "EX 40 UR", "ZX 16","ZX 40", "ZX55U-5A", "ZX26U-6"]
+                        },
+                        {
+                            "mark":   "JCB",
+                            "displayName":  "Model",
+                            "model":  ["802", "804 Plus","8027 Z", "8025 ZTS", "8020 CTS", "51R-I", "JCB50Z", "JCB55Z"]
+                        },
+                        {
+                            "mark":   "Takeuchi",
+                            "displayName":  "Model",
+                            "model":  ["TB 015 A", "TB 035", "TB 28 FR", "TB 153 FR", "TB216S", "TB 240"]
+                        },
+                        {
+                            "mark":   "Schaeff",
+                            "displayName":  "Model",
+                            "model":  ["TC 08", "TC 10", "DX27Z", "TC 25", "TC 50"]
+                        },
+                        {
+                            "mark":   "Doosan",
+                            "displayName":  "Model",
+                            "model":  ["Solar 035", "Solar 55 V", "DX27Z", "DX 55", "DX57W"]
+                        },
+                        {
+                            "mark":   "New Holland",
+                            "displayName":  "Model",
+                            "model":  ["E9SR", "E 20 SR", "E10SR", "E10SR", "E39B SR"]
+                        }
+                    ]
+                } 
+            },
+            { 
+                "name": "weight_t",
+                "displayName":  "Weight",
+                "type": "number", 
+                "mandatory": true,
+                "measureUnit": "tons", 
+                "numberConstrain": { 
+                    "minValue": 0, 
+                    "maxValue": 10 
+                }
+            },
+            { 
+                "name": "bucketcapacity_mÂł",
+                "displayName":  "Bucket capacity",
+                "type": "number",
+                "mandatory": true,
+                "measureUnit": "m³", 
+                "numberConstrain": { 
+                    "minValue": 0, 
+                    "maxValue": 1.2 
+                }
+            },
+            { 
+                "name": "trackwidth_mm",
+                "displayName":  "Track width",
+                "type": "string",
+                "mandatory": true,
+                "measureUnit": "mm", 
+                "categoricalConstrain":{
+                    "values":[ "350", "400", "180", "300", "320", "230", "250", "200", "450" ]
+                }
+            },
+            { 
+                "name": "country",
+                "displayName":  "Country",
+                "type": "string",
+                "mandatory": true,
+                "categoricalConstrain":{
+                    "values":[
+                        "US", "NL", "DE", "IT", "DK", "BE", "GB",
+                        "FR", "PL", "ES", "CA", "FI", "UA", "CZ",
+                        "RO", "HU", "SK", "GR", "CN", "PE", "LT",
+                        "BR", "BG", "LV", "GE", "HR"
+                    ]
+                }
+            },
+            { 
+                "name": "maxreachhorizontal_m",
+                "displayName":  "Max reach horizontal",
+                "type": "number",
+                "mandatory": true,
+                "measureUnit": "m", 
+                "numberConstrain": { 
+                    "minValue": 0, 
+                    "maxValue": 8 
+                }
+            }, 
+            { 
+                "name": "dredgingdepth_m",
+                "displayName":  "Dredging depth",
+                "type": "number",
+                "mandatory": true,
+                "measureUnit": "m", 
+                "numberConstrain": { 
+                    "minValue": 0, 
+                    "maxValue": 6 
+                }
+            },
+            { 
+                "name": "tearoutforce_kn",
+                "displayName":  "Tear out force",
+                "type": "number",
+                "mandatory": true,
+                "measureUnit": "kilo neutons",
+                "numberConstrain": { 
+                    "minValue": 0, 
+                    "maxValue": 100 
+                }
+            },
+            { 
+                "name": "enginepower_kw",
+                "displayName":  "Machine power",
+                "type": "number",
+                "mandatory": true,
+                "measureUnit": "kilowat",
+                "numberConstrain": { 
+                    "minValue": 0, 
+                    "maxValue": 100 
+                }
+            }, 
+            { 
+                "name": "operating_hours",
+                "displayName":  "Operating hours",
+                "type": "number", 
+                "mandatory": true,
+                "measureUnit": "hours", 
+                "numberConstrain": { 
+                    "minValue": 0, 
+                    "maxValue": 15000 
+                }
+            },
+            { 
+                "name": "year_of_manufacture",
+                "displayName":  "Year",
+                "type": "number",
+                "mandatory": true,
+                "numberConstrain": { 
+                    "minValue": 1990, 
+                    "maxValue": 2022 
+                }
+            }
+        ]    
+    },
+    {
+        "vehicleType": "Telehandlers", 
+        "fields": [
+            { 
+                "name": "original_manufacturer",
+                "displayName":  "Manufacturer",
+                "isModel": true,
+                "type": "string", 
+                "mandatory": true,
+                "categoricalConstrain":{ 
+                    "values": [
+                        {
+                            "mark":   "Caterpillar",
+                            "displayName":  "Model",
+                            "model":  ["TH 63", "TH360B", "TH337C", "TH255", "TH417C", "TL1055D"]
+                        },
+                        {
+                            "mark":   "John Deere",
+                            "displayName":  "Model",
+                            "model":  ["3215", "3420", "3800", "3220", "3415"]
+                        },
+                        {
+                            "mark":   "JCB",
+                            "displayName":  "Model",
+                            "model":  ["525-58", "540-70", "540-140", "535-140 HiViz", "535V125", "525-60 HiViz", "535V140"]
+                        },
+                        {
+                            "mark":   "Komatsu",
+                            "displayName":  "Model",
+                            "model":  ["WH716", "WH613", "WH714H", "WH609"]
+                        },
+                        {
+                            "mark":   "Bobcat",
+                            "displayName":  "Model",
+                            "model":  ["T 3071", "T 3093 S", "T 3571 L", "TL 470", "TL 470 HF"]
+                        },
+                        {
+                            "mark":   "Haulotte",
+                            "displayName":  "Model",
+                            "model":  ["HTL4014", "HTL4017", "HTL6508", "HTL3510", "HTL3210"]
+                        },
+                        {
+                            "mark":   "New Holland",
+                            "displayName":  "Model",
+                            "model":  ["LM 430", "LM 425", "LM 732", "LM 935"]
+                        }
+                    ]
+                } 
+            },
+            { 
+                "name": "Nominalloadatcog t",
+                "displayName":  "Nominal load at cog",
+                "type": "number",
+                "mandatory": true,
+                "measureUnit": "tons",
+                "numberConstrain": { 
+                    "minValue": 0, 
+                    "maxValue": 15 
+                }
+            }, 
+            { 
+                "name": "Maxreachhorizontal m",
+                "displayName":  "Max reach horizontal",
+                "type": "number",
+                "mandatory": true,
+                "measureUnit": "m", 
+                "numberConstrain": { 
+                    "minValue": 0, 
+                    "maxValue": 20
+                }
+            }, 
+            { 
+                "name": "country",
+                "displayName":  "Country",
+                "type": "string",
+                "mandatory": true,
+                "categoricalConstrain":{
+                    "values":[
+                        "US", "NL", "DE", "IT", "DK", "BE", "GB",
+                        "FR", "PL", "ES", "CA", "FI", "UA", "CZ",
+                        "RO", "HU", "SK", "GR", "CN", "PE", "LT",
+                        "BR", "BG", "LV", "GE", "HR"
+                    ]
+                }
+            },
+            { 
+                "name": "Capacityatfullforwardreach t",
+                "displayName":  "Capacity at full forward reach",
+                "type": "number",
+                "mandatory": true,
+                "measureUnit": "tons", 
+                "numberConstrain": { 
+                    "minValue": 0, 
+                    "maxValue": 2.5
+                }
+            },
+            { 
+                "name": "Liftingheight m",
+                "displayName":  "Lifting height",
+                "type": "number",
+                "mandatory": true,
+                "measureUnit": "m", 
+                "numberConstrain": { 
+                    "minValue": 0, 
+                    "maxValue": 12 
+                }
+            },
+            { 
+                "name": "Capacityatfulllifthight t",
+                "displayName":  "Capacity at full lifthight",
+                "type": "number",
+                "mandatory": true,
+                "measureUnit": "tons",
+                "numberConstrain": { 
+                    "minValue": 0, 
+                    "maxValue": 5 
+                }
+            },
+            { 
+                "name": "Weight t", 
+                "displayName":  "Weight",
+                "type": "number", 
+                "mandatory": true,
+                "measureUnit": "tons", 
+                "numberConstrain": { 
+                    "minValue": 0, 
+                    "maxValue": 20 
+                }
+            },
+            { 
+                "name": "Operating hours",
+                "displayName":  "Operating hours",
+                "type": "number", 
+                "mandatory": true,
+                "measureUnit": "hours", 
+                "numberConstrain": { 
+                    "minValue": 0, 
+                    "maxValue": 13000 
+                }
+            },
+            { 
+                "name": "Year of manufacture",
+                "displayName":  "Year",
+                "type": "number",
+                "mandatory": true,
+                "numberConstrain": { 
+                    "minValue": 1990, 
+                    "maxValue": 2022 
+                }
+            }
+        ]    
+    }
+]

@@ -1,0 +1,14 @@
+<nz-layout class="container">
+  <nz-header class="header">
+    <ul class="menu" nz-menu nzTheme="dark" nzMode="horizontal">
+      <button *ngFor="let mlInput of mlPredictionInput" class="nav-item" nz-menu-item nz-button nzType="primary" nzShape="round" [routerLink]="'/forms/'+mlInput.vehicleType">{{mlInput.vehicleType}}</button>
+    </ul>
+    <div class="logo"></div>
+  </nz-header>
+  <nz-layout class="layout">
+    <nz-content>
+      <router-outlet></router-outlet>
+    </nz-content>
+  </nz-layout>
+  <nz-footer class="footer">Artificial Intelligence 2023</nz-footer>
+</nz-layout>

@@ -1,0 +1,79 @@
+<div class="inner-content">
+  <div class="title-container">
+    <p class="title">Mini excavators</p>
+  </div>
+  <form nz-form [formGroup]="validateForm" class="form" (ngSubmit)="submitForm()">
+    <nz-form-item class="item">
+      <nz-form-label class="label"
+        nzFor="fieldOne"
+        nzRequired
+      >
+        <span>fieldOne</span>
+      </nz-form-label>
+      <nz-form-control class="control" nzErrorTip="Please input fieldOne!"  nzHasFeedback>
+        <nz-input-group>
+          <input class="input" type="text" nz-input formControlName="fieldOne" placeholder="fieldOne" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item class="item">
+      <nz-form-label class="label"
+        nzFor="fieldTwo"
+        nzRequired
+      >
+        <span>fieldTwo</span>
+      </nz-form-label>
+      <nz-form-control class="control" nzErrorTip="Please input fieldTwo!"  nzHasFeedback>
+        <nz-input-group>
+          <input class="input" type="text" nz-input formControlName="fieldTwo" placeholder="fieldTwo" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item class="item">
+      <nz-form-label class="label"
+        nzFor="fieldThree"
+        nzRequired
+      >
+        <span>fieldThree</span>
+      </nz-form-label>
+      <nz-form-control class="control" nzErrorTip="Please input fieldThree!"  nzHasFeedback>
+        <nz-input-group>
+          <input class="input" type="text" nz-input formControlName="fieldThree" placeholder="fieldThree" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item class="item">
+      <nz-form-label class="label"
+        nzFor="filedFour"
+        nzRequired
+      >
+        <span>filedFive</span>
+      </nz-form-label>
+      <nz-form-control class="control" nzErrorTip="Please input filedFive!"  nzHasFeedback>
+        <nz-input-group>
+          <input class="input" type="text" nz-input formControlName="filedFive" placeholder="filedFive" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item class="item">
+      <nz-form-label class="label"
+        nzFor="fieldSix"
+        nzRequired
+      >
+        <span>fieldSix</span>
+      </nz-form-label>
+      <nz-form-control class="control" nzErrorTip="Please input fieldSix!"  nzHasFeedback>
+        <nz-input-group>
+          <input class="input" type="text" nz-input formControlName="fieldSix" placeholder="fieldSix" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+
+
+    <button nz-button class="submit" type="submit" nzShape="round">Submit form</button>
+  </form>
+</div>

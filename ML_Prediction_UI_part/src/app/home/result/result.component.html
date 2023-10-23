@@ -1,0 +1,24 @@
+<div class="inner-content">
+  <div *ngIf="!!result" class="title-container">
+    <p class="title">Result</p>
+  </div>
+
+  <div *ngIf="!result" class="title-container">
+    <p class="title">No Last Results</p>
+  </div>
+
+  <div *ngFor="let detail of result?.result" class="results">
+    <div class="result-item">
+      <h2 class="item-name">Model:</h2>
+      <span class="item-value">{{ detail?.modelName }}</span>
+    </div>
+    <div class="result-item">
+      <h2 class="item-name">Estimated Price:</h2>
+      <span class="item-value">{{ detail?.price }} $</span>
+    </div>
+    <div class="result-item">
+      <h2 class="item-name">Estimated Range:</h2>
+      <span class="item-value">{{ detail!.price - detail!.deviation }} - {{ detail!.price + detail!.deviation }} $</span>
+    </div>
+  </div>
+</div>

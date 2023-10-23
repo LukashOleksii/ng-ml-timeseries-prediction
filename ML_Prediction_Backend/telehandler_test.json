@@ -1,0 +1,16 @@
+{
+    "vehicleType": "Telehandlers",
+    "fields":{
+        "original_manufacturer": "JOHN DEERE",
+        "model version": "5080 GV",
+        "Nominalloadatcog t": 5,
+        "Maxreachhorizontal m": 10,
+        "country": "DE",
+        "Capacityatfullforwardreach t": 1,
+        "Liftingheight m": 5,
+        "Capacityatfulllifthight t": 2,
+        "Weight t": 3,
+        "Operating hours": 5000,
+        "Year of manufacture": 2015
+    }
+}

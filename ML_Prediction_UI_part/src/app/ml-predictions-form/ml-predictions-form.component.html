@@ -1,0 +1,65 @@
+<div *ngIf="!error" class="wrapper">
+  <div class="Title">
+    {{ fieldsInput?.vehicleType }}
+  </div>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div *ngFor="let fieldInput of fieldsInput?.fields">
+      <div class="input-wrapper">
+        <ng-container *ngIf="fieldInput.type === 'number'">
+          <label class="label">{{ fieldInput?.displayName }}</label>
+          <label *ngIf="fieldInput.mandatory">*</label>
+          <input
+            type="{{ fieldInput.type }}"
+            [min]="fieldInput?.numberConstrain?.minValue"
+            [max]="fieldInput?.numberConstrain?.maxValue"
+            [required]="fieldInput.mandatory"
+            [formControlName]="fieldInput.name"
+          />
+          <label> {{ fieldInput.measureUnit }}</label>
+        </ng-container>
+
+        <ng-container *ngIf="fieldInput.type === 'string'">
+          <label class="label">{{ fieldInput?.displayName }}</label>
+          <input type="text" [attr.list]="fieldInput?.name" />
+          <datalist [id]="fieldInput.name">
+            <option
+              *ngFor="let field of fieldInput.categoricalConstrain?.values"
+              [value]="field"
+            >
+              {{ field }}
+            </option>
+          </datalist>
+        </ng-container>
+      </div>
+    </div>
+    <button>Submit</button>
+  </form>
+
+  <div>
+    <h2>RESULT (SHOW WHEN GOT RESPONSE</h2>
+    <div>Estimation</div>
+    <div>Estimated price:</div>
+    <div>Estimated range</div>
+    <div>
+      Details
+      <div>
+        <div>Model: LinearRegression</div>
+        <div>Estimated Price</div>
+        <div>Estimated range</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <form id="datiRichiesta" [hidden]="datiRichiestaClicked" (submit)="submit()">
+  <div class="form-group" *ngFor="let d of data">
+      <input type="text" 
+          class="form-control" 
+          placeholder="{{d.placeholder}}" 
+          [(ngModel)]="model[d.modelPropName]"
+          name="{{d.name}}"
+          (focus)="$event.target.placeholder = ''" 
+          (blur)="$event.target.placeholder = d.placeholder"/>
+  </div>
+  <button>Submit</button>
+</form> -->

@@ -1,0 +1,107 @@
+<div *ngIf="isLoaded" class="inner-content">
+    <div class="title-container">
+      <p class="title" *ngIf="!!mlPredictionInput">{{vehicleType}}</p>
+      <p class="title" *ngIf="!mlPredictionInput && !isError" style="color:red"> Category does not exits </p>
+      <p class="title" *ngIf="!mlPredictionInput && isError" style="color:red"> Server is not working </p>
+    </div>
+    <form nz-form [formGroup]="validateForm" class="form" (ngSubmit)="submitForm()" *ngIf="!!mlPredictionInput">
+      <div class="item" *ngFor="let mlInput of mlPredictionInput?.fields">  
+      <nz-form-item class="item" *ngIf="!mlInput.isModel">
+            <nz-form-label class="label"
+              [nzFor]="mlInput.displayName"
+              [nzRequired]="mlInput.mandatory"
+            >
+              <span>{{mlInput.displayName}}</span>
+            </nz-form-label>
+
+            <nz-form-control class="control" [nzErrorTip]="mlInput.type == 'number'? 'Please input ' + mlInput.displayName! + ' in range: ' + mlInput?.numberConstrain?.minValue + ' - ' + mlInput?.numberConstrain?.maxValue : 'Please input ' + mlInput.displayName!"  nzHasFeedback>
+              <nz-input-group *ngIf="mlInput.type == 'number'">
+                <input class="input" [type]="mlInput.type" nz-input [formControlName]="mlInput.name" [placeholder]="mlInput.displayName" />
+              </nz-input-group>
+
+              <nz-select
+              *ngIf="mlInput.type == 'string'"
+              [id]="mlInput.name"
+              [formControlName]="mlInput.name"
+              nzPlaceHolder="Select an option"
+              nzErrorTip="Choose an option"
+            >
+              <nz-option *ngFor="let value of mlInput?.categoricalConstrain?.values" [nzValue]="value" [nzLabel]="value"></nz-option>
+            </nz-select>
+
+            <nz-select
+            *ngIf="mlInput.type == 'boolean'"
+            [id]="mlInput.name"
+            [formControlName]="mlInput.name"
+            nzPlaceHolder="Select an option"
+            nzErrorTip="Choose an option"
+          >
+            <nz-option nzValue="0" nzLabel="No"></nz-option>
+            <nz-option nzValue="1" nzLabel="Yes"></nz-option>
+          </nz-select>
+          
+            </nz-form-control>
+        </nz-form-item>
+
+
+
+
+
+
+
+
+        
+        
+      <nz-form-item class="item" *ngIf="mlInput.isModel">
+
+        <nz-form-label class="label"
+        [nzFor]="mlInput.displayName"
+        [nzRequired]="mlInput.mandatory"
+      >
+        <span>{{mlInput.displayName}}</span>
+      </nz-form-label>
+
+      <nz-form-control class="control" [nzErrorTip]="'Please input ' + mlInput.displayName!"  nzHasFeedback>
+        <nz-select
+        *ngIf="mlInput.type == 'string'"
+        [id]="mlInput.name"
+        [formControlName]="mlInput.name"
+        nzPlaceHolder="Select an option"
+        nzErrorTip="Choose an option"
+        (ngModelChange)="setManufacturer($event)"
+      >
+        <nz-option *ngFor="let value of mlInput?.categoricalConstrain?.values" [nzValue]="value?.mark" [nzLabel]="value?.mark"></nz-option>
+      </nz-select>
+    
+      </nz-form-control>
+
+      </nz-form-item>
+
+      <nz-form-item class="item" *ngIf="mlInput.isModel && validateForm.controls[mlInput.name].valid">
+
+        <nz-form-label class="label"
+        nzFor="Model version"
+        nzRequired
+      >
+        <span>Model version</span>
+      </nz-form-label>
+
+      <nz-form-control class="control" nzErrorTip="Please input model version"  nzHasFeedback>
+        <nz-select
+        id="model version"
+        formControlName="model version"
+        nzPlaceHolder="Select an option"
+        nzErrorTip="Choose an option"
+      >
+        <nz-option *ngFor="let value of models" [nzValue]="value" [nzLabel]="value"></nz-option>
+      </nz-select>
+    
+      </nz-form-control>
+
+      </nz-form-item>
+
+        </div>
+      <button nz-button class="submit" type="submit" nzShape="round">Submit form</button>
+    </form>
+  </div>
+  

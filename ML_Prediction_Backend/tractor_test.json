@@ -1,0 +1,16 @@
+{
+    "vehicleType": "Tractors",
+    "fields":{
+        "original_manufacturer": "JOHN DEERE",
+        "model version": "5080 GV",
+        "operating_hours": 12000,
+        "year_of_manufacture": 2015,
+        "country": "DE",
+        "driver_pneumatic_seat": 1,
+        "max_speed": 80,
+        "hydraulic_front_equipment": 1,
+        "all_wheel_drive": 0,
+        "suspended_front_axle": 0,
+        "power_output(kw)": 300
+    }
+}

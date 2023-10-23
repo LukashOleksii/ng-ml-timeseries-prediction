@@ -1,0 +1,53 @@
+@import "/src/styles/color-palette.scss";
+
+.inner-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 24px;
+  width: 60vw;
+  height: 80vh;
+  background: $white-color;
+
+  .results {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+
+    .result-item {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      width: 200px;
+      max-width: 200px;
+      flex-wrap: wrap;
+
+      .item-name {
+        font-size: 24px;
+        font-weight: 700;
+        color: $secondary-color;
+      }
+
+      .item-value {
+        font-size: 20px;
+        font-weight: 600;
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+.title-container {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .title {
+    font-size: 40px;
+    font-weight: 700;
+    color: $primary-color;
+  }
+}
