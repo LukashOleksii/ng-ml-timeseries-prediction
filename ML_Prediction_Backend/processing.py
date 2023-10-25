@@ -7,13 +7,14 @@ from datetime import datetime
 from sklearn.preprocessing import PolynomialFeatures
 
 class Processing:
-    
+
   def __init__(self, data):
     self.vehicleType = data['vehicleType']
     self.values = data['fields']
     self.deviations = json.load(open('deviations.json'))
 
   def predict(self):
+    return json.dumps(list({'RETURN'}))
 
     model_name = self.vehicleType
     deviations = self.deviations
@@ -37,30 +38,30 @@ class Processing:
       PL = int(PL_model.predict(PolynomialFeatures(degree=5).fit_transform(df)))
 
     results = {
-      "result": [ 
-        { 
-          "modelName": "Neural Network", 
-          "price": int(scaler.inverse_transform(NN_model.predict(np.asarray(df).astype('float32')))), 
+      "result": [
+        {
+          "modelName": "Neural Network",
+          "price": int(scaler.inverse_transform(NN_model.predict(np.asarray(df).astype('float32')))),
           "deviation": deviations[model_name]['Neural Network']
         },
-        { 
-          "modelName": "Linear Regression", 
-          "price": int(LR_model.predict(df)), 
+        {
+          "modelName": "Linear Regression",
+          "price": int(LR_model.predict(df)),
           "deviation":  deviations[model_name]['Linear Regression']
-        }, 
-        { 
-          "modelName": "Polynomial Regression", 
-          "price": PL, 
+        },
+        {
+          "modelName": "Polynomial Regression",
+          "price": PL,
           "deviation": deviations[model_name]['Polynomial Regression']
-        }, 
-        { 
-          "modelName": "Decision Tree Regressor", 
-          "price": int(DT_model.predict(df)), 
+        },
+        {
+          "modelName": "Decision Tree Regressor",
+          "price": int(DT_model.predict(df)),
           "deviation": deviations[model_name]['Decision Tree Regressor']
-        }, 
-        { 
-          "modelName": "Random Forest Regressor", 
-          "price": int(RF_model.predict(df)), 
+        },
+        {
+          "modelName": "Random Forest Regressor",
+          "price": int(RF_model.predict(df)),
           "deviation": deviations[model_name]['Random Forest Regressor']
         }
       ]
@@ -68,7 +69,6 @@ class Processing:
 
     return json.dumps(results)
 
-  
   def dataframe_columns(self, vehicleType, data):
     if vehicleType == "Tractors":
       columns = ['original_manufacturer', 'model version', 'operating_hours',
@@ -93,26 +93,26 @@ class Processing:
 
     dataframe = pd.DataFrame(columns = columns)
     arr = [data[i] for i in columns]
-  
+
     dataframe = dataframe.append(dict(zip(columns, arr)), ignore_index=True)
-  
+
     return dataframe
-  
-  
+
+
   def prepare_for_predict(self, dataframe, vehicleType):
     dataframe = dataframe.drop(columns=['original_manufacturer', 'model version', 'country'])
-  
+
     for i in dataframe:
       dataframe[i] = dataframe[i].astype(float)
-  
-  
+
+
     if vehicleType == "Skit_steer_loaders":
-    
+
       for i in ['driverprotection','steeringmode']:
         label_encoder = joblib.load(f'models/{vehicleType}/{i}_labelEncoder_{vehicleType}.sav')
         dataframe[i] = label_encoder.transform(dataframe[i])
-  
-  
+
+
       dataframe['age_in_months'] = int((datetime.today().year - 1 - dataframe['age_in_months']) * 12 + datetime.today().month)
-  
+
     return dataframe
