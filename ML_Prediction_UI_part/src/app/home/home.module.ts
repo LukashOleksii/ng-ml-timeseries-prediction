@@ -15,16 +15,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
-import { MiniExcavatorFormComponent } from './mini-excavator-form/mini-excavator-form.component';
 import { ResultComponent } from './result/result.component';
-import { TelehandlerFormComponent } from './telehandler-form/telehandler-form.component';
-import { TractorFormComponent } from './tractor-form/tractor-form.component';
 import { GeneralFormComponent } from './general-form/general-form.component';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 
 @NgModule({
-    declarations: [HomeComponent, TractorFormComponent, MiniExcavatorFormComponent, TelehandlerFormComponent, ResultComponent, GeneralFormComponent],
+    declarations: [HomeComponent, ResultComponent, GeneralFormComponent],
     imports: [
         CommonModule,
         HomeRoutingModule,

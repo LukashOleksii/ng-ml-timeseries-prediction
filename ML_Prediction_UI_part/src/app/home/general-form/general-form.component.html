@@ -1,107 +1,43 @@
 <div *ngIf="isLoaded" class="inner-content">
-    <div class="title-container">
-      <p class="title" *ngIf="!!mlPredictionInput">{{vehicleType}}</p>
-      <p class="title" *ngIf="!mlPredictionInput && !isError" style="color:red"> Category does not exits </p>
-      <p class="title" *ngIf="!mlPredictionInput && isError" style="color:red"> Server is not working </p>
-    </div>
-    <form nz-form [formGroup]="validateForm" class="form" (ngSubmit)="submitForm()" *ngIf="!!mlPredictionInput">
-      <div class="item" *ngFor="let mlInput of mlPredictionInput?.fields">  
-      <nz-form-item class="item" *ngIf="!mlInput.isModel">
-            <nz-form-label class="label"
-              [nzFor]="mlInput.displayName"
-              [nzRequired]="mlInput.mandatory"
-            >
-              <span>{{mlInput.displayName}}</span>
-            </nz-form-label>
-
-            <nz-form-control class="control" [nzErrorTip]="mlInput.type == 'number'? 'Please input ' + mlInput.displayName! + ' in range: ' + mlInput?.numberConstrain?.minValue + ' - ' + mlInput?.numberConstrain?.maxValue : 'Please input ' + mlInput.displayName!"  nzHasFeedback>
-              <nz-input-group *ngIf="mlInput.type == 'number'">
-                <input class="input" [type]="mlInput.type" nz-input [formControlName]="mlInput.name" [placeholder]="mlInput.displayName" />
-              </nz-input-group>
-
-              <nz-select
-              *ngIf="mlInput.type == 'string'"
-              [id]="mlInput.name"
-              [formControlName]="mlInput.name"
-              nzPlaceHolder="Select an option"
-              nzErrorTip="Choose an option"
-            >
-              <nz-option *ngFor="let value of mlInput?.categoricalConstrain?.values" [nzValue]="value" [nzLabel]="value"></nz-option>
-            </nz-select>
-
-            <nz-select
-            *ngIf="mlInput.type == 'boolean'"
-            [id]="mlInput.name"
-            [formControlName]="mlInput.name"
-            nzPlaceHolder="Select an option"
-            nzErrorTip="Choose an option"
-          >
-            <nz-option nzValue="0" nzLabel="No"></nz-option>
-            <nz-option nzValue="1" nzLabel="Yes"></nz-option>
-          </nz-select>
-          
-            </nz-form-control>
-        </nz-form-item>
-
-
-
-
-
-
-
-
-        
-        
-      <nz-form-item class="item" *ngIf="mlInput.isModel">
-
-        <nz-form-label class="label"
-        [nzFor]="mlInput.displayName"
-        [nzRequired]="mlInput.mandatory"
-      >
-        <span>{{mlInput.displayName}}</span>
-      </nz-form-label>
-
-      <nz-form-control class="control" [nzErrorTip]="'Please input ' + mlInput.displayName!"  nzHasFeedback>
-        <nz-select
-        *ngIf="mlInput.type == 'string'"
-        [id]="mlInput.name"
-        [formControlName]="mlInput.name"
-        nzPlaceHolder="Select an option"
-        nzErrorTip="Choose an option"
-        (ngModelChange)="setManufacturer($event)"
-      >
-        <nz-option *ngFor="let value of mlInput?.categoricalConstrain?.values" [nzValue]="value?.mark" [nzLabel]="value?.mark"></nz-option>
-      </nz-select>
-    
-      </nz-form-control>
-
-      </nz-form-item>
-
-      <nz-form-item class="item" *ngIf="mlInput.isModel && validateForm.controls[mlInput.name].valid">
-
-        <nz-form-label class="label"
-        nzFor="Model version"
-        nzRequired
-      >
-        <span>Model version</span>
-      </nz-form-label>
-
-      <nz-form-control class="control" nzErrorTip="Please input model version"  nzHasFeedback>
-        <nz-select
-        id="model version"
-        formControlName="model version"
-        nzPlaceHolder="Select an option"
-        nzErrorTip="Choose an option"
-      >
-        <nz-option *ngFor="let value of models" [nzValue]="value" [nzLabel]="value"></nz-option>
-      </nz-select>
-    
-      </nz-form-control>
-
-      </nz-form-item>
-
-        </div>
-      <button nz-button class="submit" type="submit" nzShape="round">Submit form</button>
-    </form>
+  <div class="title-container">
+    <p class="title" *ngIf="!!mlPredictionInput">{{vehicleType}}</p>
+    <p class="title" *ngIf="!mlPredictionInput && !isError" style="color:red"> Category does not exits </p>
+    <p class="title" *ngIf="!mlPredictionInput && isError" style="color:red"> Server is not working </p>
   </div>
-  
+
+  <div class="content-container">
+    <div class="first-row row">
+      <div *ngFor="let item of machineryField" >
+        <div class="mb-3">
+
+          <a class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+            <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src={{item.imagePath}} alt="">
+            <div class="flex flex-col justify-between p-4 leading-normal">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{item.title}}</h5>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">ID: {{item.identifier}}</p>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="second-row row">
+      <div *ngFor="let item of workTypeField" >
+        <div class="mb-3">
+          <a class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+            <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src={{item.imagePath}} alt="">
+            <div class="flex flex-col justify-between p-4 leading-normal">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{item.title}}</h5>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">ID: {{item.identifier}}</p>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <button nz-button class="submit" type="submit" nzType="primary" nzShape="round">Submit form</button>
+</div>

@@ -3,10 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { GeneralFormComponent } from './general-form/general-form.component';
 
 import { HomeComponent } from './home.component';
-import { MiniExcavatorFormComponent } from './mini-excavator-form/mini-excavator-form.component';
 import { ResultComponent } from './result/result.component';
-import { TelehandlerFormComponent } from './telehandler-form/telehandler-form.component';
-import { TractorFormComponent } from './tractor-form/tractor-form.component';
 
 const routes: Routes = [
     {
