@@ -55,6 +55,14 @@ class Process:
       lstm_sensors_predict[sensor], lstm_statuses_on_percentage.loc[len(lstm_statuses_on_percentage)], lstm_accuracy.loc[len(lstm_accuracy)] = __predict_values(database, lstm_sensors_statuses, model_type, sensor)
     #   lstm_statuses_on_percentage.loc[len(lstm_statuses_on_percentage)] = __check_statuses_on_percentage(cnn_sensors_statuses[sensor], sensor)
 
+    # results = {
+    #   "label" : SENSORS_LABELS,
+    #   "statusOnPercentageCNN" : ,
+    #   "accuracyDeviationCNN" : ,
+    #   "statusOnPercentageLSTM" : ,
+    #   "accuracyDeviationLSTM" :
+    # }
+
     results = {
       "labels" : SENSORS_LABELS,
       "models" : [
