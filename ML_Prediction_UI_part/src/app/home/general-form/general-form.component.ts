@@ -19,6 +19,8 @@ export class GeneralFormComponent implements OnInit {
   public machineryField: any;
   public workTypeField: any;
 
+  public selectedVehicle: any;
+  public selectedWork: any;
   public vehicleType: string | null = null;
 
   constructor(private mlPredictionApiService: MlPredictionApiService, private route: ActivatedRoute, private fb: FormBuilder, private router: Router, private mlPredictionResultSaver: MlPredictionResultService) {
@@ -40,9 +42,17 @@ export class GeneralFormComponent implements OnInit {
     }, error => {this.isError = true; this.isLoaded = true;}, () => this.isLoaded = true);
   }
 
-  submitForm(): void {
+  // submitForm(): void {
+  //   console.log('submit');
+  //   this.mlPredictionApiService.postPrediction({ vehicleType: this.vehicleType!, fields: 'this.validateForm.value' }).subscribe(result => {
+  //     this.mlPredictionResultSaver.saveLastResult(result);
+  //     this.router.navigateByUrl('/result');
+  //   })
+  // }
+
+  submit(): void {
     console.log('submit');
-    this.mlPredictionApiService.postPrediction({ vehicleType: this.vehicleType!, fields: 'this.validateForm.value' }).subscribe(result => {
+    this.mlPredictionApiService.postPrediction({title: this.selectedVehicle.title, vehicleType: this.selectedVehicle.identifier, workType: this.selectedWork.difficultCoef}).subscribe(result => {
       this.mlPredictionResultSaver.saveLastResult(result);
       this.router.navigateByUrl('/result');
     })

@@ -1,6 +1,7 @@
 from flask import Flask, json, jsonify, request
-from flask_cors import CORS 
+from flask_cors import CORS
 from processing import Processing
+from process import Process
 
 app = Flask(__name__)
 
@@ -16,7 +17,8 @@ def hello():
 
 @app.route('/prediction', methods=["POST"])
 def prediction():
-    response = Processing(request.json).predict()
+    # response = Process(request.json).predict()
+    response = jsonify(json.load(open('results.json')))
 
     return response
 

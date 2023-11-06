@@ -8,7 +8,7 @@ import { ResultComponent } from './result/result.component';
 const routes: Routes = [
     {
         path: '',
-        redirectTo: 'forms/tractor-form'
+        redirectTo: 'Heavy Machinery'
     },
     {
         path: '',
@@ -19,7 +19,7 @@ const routes: Routes = [
                 component: ResultComponent
             },
             {
-                path: 'forms/:vehicleType',
+                path: ':vehicleType',
                 component: GeneralFormComponent
             }
         ]
@@ -27,7 +27,7 @@ const routes: Routes = [
 
     {
         path: '**',
-        redirectTo: 'fruits'
+        redirectTo: 'Heavy Machinery'
     }
 ];
 

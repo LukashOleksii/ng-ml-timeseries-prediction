@@ -1,24 +1,119 @@
 <div class="inner-content">
-  <div *ngIf="!!result" class="title-container">
-    <p class="title">Result</p>
+  <div *ngIf="!!result" >
+    <div class="title-container">
+      <p class="title">Result</p>
+    </div>
+
+    <div class="content-container">
+      <div class="general-info-container">
+        <div class="photo-container">
+          <div class="bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+            <div class="flex flex-col items-center md:flex-row ">
+              <div class="flex flex-col justify-between custom-image p-6 leading-normal">
+                <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:rounded-none md:rounded-l-lg" src="/assets/photo/machinery_images/{{result?.typeOfVehicle}}.png" alt={{result?.typeOfVehicle}}>
+                <h5 class="mt-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{result?.title}}</h5>
+                <p class="font-normal text-gray-700 dark:text-gray-400">ID: {{result?.typeOfVehicle}}</p>
+              </div>
+
+              <div class="flex flex-col justify-between p-6 leading-normal">
+
+                  <p class="font-normal custom-text text-gray-700 dark:text-gray-400" *ngIf="combinedSensorNames.length > 0; else noSensorNames">
+                    {{ description?.unsuitable }}
+                    You can potentially experience breakdowns identified by the following sensors:<br><br><b>{{combinedSensorNames}}</b>.<br><br>
+                    Pay attention to checking the sensors and the unit as a whole.
+                  </p>
+
+                  <ng-template #noSensorNames>
+                    <p class="font-normal custom-text text-gray-700 dark:text-gray-400">
+                      {{ description?.suitable }}
+                    </p>
+                  </ng-template>
+                </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="table-container relative overflow-x-auto shadow-md sm:rounded-lg">
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+          <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+              <th scope="col" class="px-6 py-3"></th>
+              <th scope="col" class="px-6 py-3"></th>
+              <th scope="col" class="px-6 py-3">
+                CNN
+              </th>
+              <th scope="col" class="px-6 py-3"></th>
+              <th scope="col" class="px-6 py-3"></th>
+              <th scope="col" class="px-6 py-3">
+                LSTM
+              </th>
+              <th scope="col" class="px-6 py-3"></th>
+            </tr>
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                  Sensor name
+                </th>
+                <th scope="col" class="px-6 py-3">
+                  MAE
+                </th>
+                <th scope="col" class="px-6 py-3">
+                  MSE
+                </th>
+                <th scope="col" class="px-6 py-3">
+                  RMSE
+                </th>
+                <th scope="col" class="px-6 py-3">
+                  MAE
+                </th>
+                <th scope="col" class="px-6 py-3">
+                  MSE
+                </th>
+                <th scope="col" class="px-6 py-3">
+                  RMSE
+                </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700"  *ngFor="let item of sensorData" >
+              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                {{ item.SENSOR_NAME }}
+              </th>
+              <td class="px-6 py-4">
+                {{ item.MAE_CNN }}
+              </td>
+              <td class="px-6 py-4">
+                {{ item.MSE_CNN }}
+              </td>
+              <td class="px-6 py-4">
+                {{ item.RMSE_CNN }}
+              </td>
+              <td class="px-6 py-4">
+                {{ item.MAE_LSTM }}
+              </td>
+              <td class="px-6 py-4">
+                {{ item.MSE_LSTM }}
+              </td>
+              <td class="px-6 py-4">
+                {{ item.RMSE_LSTM }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="relative overflow-x-auto shadow-md sm:rounded-lg graphic">
+        <div *ngFor="let item of combinedSensorNames">
+          <img src="/assets/CNN/{{item}}.png" alt={{result?.typeOfVehicle}}>
+          <img src="/assets/LSTM/{{item}}.png" alt={{result?.typeOfVehicle}}>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div *ngIf="!result" class="title-container">
     <p class="title">No Last Results</p>
-  </div>
-
-  <div *ngFor="let detail of result?.result" class="results">
-    <div class="result-item">
-      <h2 class="item-name">Model:</h2>
-      <span class="item-value">{{ detail?.modelName }}</span>
-    </div>
-    <div class="result-item">
-      <h2 class="item-name">Estimated Price:</h2>
-      <span class="item-value">{{ detail?.price }} $</span>
-    </div>
-    <div class="result-item">
-      <h2 class="item-name">Estimated Range:</h2>
-      <span class="item-value">{{ detail!.price - detail!.deviation }} - {{ detail!.price + detail!.deviation }} $</span>
-    </div>
   </div>
 </div>

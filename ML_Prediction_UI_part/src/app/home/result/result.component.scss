@@ -6,9 +6,9 @@
   justify-content: flex-start;
   flex-direction: column;
   padding: 24px;
-  width: 60vw;
-  height: 80vh;
-  background: $white-color;
+  width: calc(100vw - 44px);
+  background-color: rgba(255, 255, 255, 0.15);
+  min-height: 75vh;
 
   .results {
     display: flex;
@@ -50,4 +50,73 @@
     font-weight: 700;
     color: $primary-color;
   }
+}
+
+.content-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 15px;
+
+  .general-info-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .graphic {
+    max-height: 800px;
+    overflow-y: auto;
+  }
+}
+
+.table-container {
+  max-height: 300px; /* Adjust the max-height to your preference */
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+thead {
+  background-color: #fdfdfd; /* Header background color */
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+tbody {
+  /* Set a specific height if needed, or allow it to grow based on content */
+  max-height: 250px; /* Adjust the max-height to your preference */
+  overflow-y: auto;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border: 2px solid #e1e1e1; /* Cell border color */
+}
+
+th:first-child,
+td:first-child {
+  width: 200px; /* Adjust the width to your preference */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.custom-image {
+  min-width: 500px;
+}
+
+.custom-text {
+  font-size: 20px !important;
 }

@@ -1,0 +1,1140 @@
+{
+    "labels": [
+        "Engine Temperature",
+        "Engine RPM",
+        "Fuel Consumption",
+        "Hydraulic Flow Rate",
+        "Hydraulic Pressure",
+        "Hydraulic Temperature",
+        "Voltage Supply",
+        "Current Draw",
+        "Battery Voltage",
+        "Brake Pressure",
+        "Transmission Temperature",
+        "Brake Temperature",
+        "Coolant Flow Rate",
+        "Emission Levels (e.g., CO, NOx, SOx)",
+        "Fuel Pressure",
+        "Lubricant Pressure",
+        "Lubricant Temperature",
+        "Radiator Temperature",
+        "Exhaust Temperature (Post-CAT)",
+        "Exhaust Temperature (Pre-CAT)",
+        "Exhaust Gas Flow Rate",
+        "Air Intake Temperature",
+        "Air Flow Rate",
+        "Steering Pressure",
+        "Oil Temperature",
+        "Oil Pressure",
+        "Air Pressure",
+        "Torque (Engine)",
+        "Torque (Drive Train)",
+        "Fluid hydraulic Rate",
+        "Transmission Oil Pressure",
+        "Transmission Oil Temperature",
+        "Exhaust Gas Temperature",
+        "Pump Pressure",
+        "Oxygen Content",
+        "Fuel Flow Rate (for accurate consumption monitoring)",
+        "Cabin Temperature",
+        "Vibration Level",
+        "Load Weight",
+        "Noise Frequency Spectrum",
+        "Particle Count (e.g., for air quality or filtration monitoring)",
+        "Carbon Dioxide (CO2) Content",
+        "Bucket Position",
+        "Bucket Angle",
+        "Noise Level"
+    ],
+    "statusOnPercentageCNN": [
+        {
+            "SENSOR_NAME": "Engine Temperature",
+            "NORMAL": "100.00%",
+            "WARNING": "0.00%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Engine RPM",
+            "NORMAL": "100.00%",
+            "WARNING": "0.00%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Fuel Consumption",
+            "NORMAL": "100.00%",
+            "WARNING": "0.00%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Hydraulic Flow Rate",
+            "NORMAL": "100.00%",
+            "WARNING": "0.00%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Hydraulic Pressure",
+            "NORMAL": "99.25%",
+            "WARNING": "0.20%",
+            "CRITICAL": "0.55%"
+        },
+        {
+            "SENSOR_NAME": "Hydraulic Temperature",
+            "NORMAL": "100.00%",
+            "WARNING": "0.00%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Voltage Supply",
+            "NORMAL": "40.45%",
+            "WARNING": "59.55%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Current Draw",
+            "NORMAL": "99.55%",
+            "WARNING": "0.45%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Battery Voltage",
+            "NORMAL": "99.65%",
+            "WARNING": "0.35%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Brake Pressure",
+            "NORMAL": "100.00%",
+            "WARNING": "0.00%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Transmission Temperature",
+            "NORMAL": "99.30%",
+            "WARNING": "0.65%",
+            "CRITICAL": "0.05%"
+        },
+        {
+            "SENSOR_NAME": "Brake Temperature",
+            "NORMAL": "100.00%",
+            "WARNING": "0.00%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Coolant Flow Rate",
+            "NORMAL": "100.00%",
+            "WARNING": "0.00%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Emission Levels (e.g., CO, NOx, SOx)",
+            "NORMAL": "100.00%",
+            "WARNING": "0.00%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Fuel Pressure",
+            "NORMAL": "99.95%",
+            "WARNING": "0.05%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Lubricant Pressure",
+            "NORMAL": "97.45%",
+            "WARNING": "2.50%",
+            "CRITICAL": "0.05%"
+        },
+        {
+            "SENSOR_NAME": "Lubricant Temperature",
+            "NORMAL": "97.80%",
+            "WARNING": "2.20%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Radiator Temperature",
+            "NORMAL": "98.00%",
+            "WARNING": "2.00%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Exhaust Temperature (Post-CAT)",
+            "NORMAL": "99.60%",
+            "WARNING": "0.40%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Exhaust Temperature (Pre-CAT)",
+            "NORMAL": "72.90%",
+            "WARNING": "27.10%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Exhaust Gas Flow Rate",
+            "NORMAL": "100.00%",
+            "WARNING": "0.00%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Air Intake Temperature",
+            "NORMAL": "100.00%",
+            "WARNING": "0.00%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Air Flow Rate",
+            "NORMAL": "99.95%",
+            "WARNING": "0.00%",
+            "CRITICAL": "0.05%"
+        },
+        {
+            "SENSOR_NAME": "Steering Pressure",
+            "NORMAL": "99.95%",
+            "WARNING": "0.05%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Oil Temperature",
+            "NORMAL": "100.00%",
+            "WARNING": "0.00%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Oil Pressure",
+            "NORMAL": "42.90%",
+            "WARNING": "24.65%",
+            "CRITICAL": "32.45%"
+        },
+        {
+            "SENSOR_NAME": "Air Pressure",
+            "NORMAL": "100.00%",
+            "WARNING": "0.00%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Torque (Engine)",
+            "NORMAL": "99.95%",
+            "WARNING": "0.05%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Torque (Drive Train)",
+            "NORMAL": "100.00%",
+            "WARNING": "0.00%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Fluid hydraulic Rate",
+            "NORMAL": "96.95%",
+            "WARNING": "2.85%",
+            "CRITICAL": "0.20%"
+        },
+        {
+            "SENSOR_NAME": "Transmission Oil Pressure",
+            "NORMAL": "13.90%",
+            "WARNING": "7.25%",
+            "CRITICAL": "78.85%"
+        },
+        {
+            "SENSOR_NAME": "Transmission Oil Temperature",
+            "NORMAL": "99.90%",
+            "WARNING": "0.10%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Exhaust Gas Temperature",
+            "NORMAL": "100.00%",
+            "WARNING": "0.00%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Pump Pressure",
+            "NORMAL": "100.00%",
+            "WARNING": "0.00%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Oxygen Content",
+            "NORMAL": "100.00%",
+            "WARNING": "0.00%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Fuel Flow Rate (for accurate consumption monitoring)",
+            "NORMAL": "96.80%",
+            "WARNING": "2.30%",
+            "CRITICAL": "0.90%"
+        },
+        {
+            "SENSOR_NAME": "Cabin Temperature",
+            "NORMAL": "95.45%",
+            "WARNING": "4.40%",
+            "CRITICAL": "0.15%"
+        },
+        {
+            "SENSOR_NAME": "Vibration Level",
+            "NORMAL": "99.25%",
+            "WARNING": "0.75%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Load Weight",
+            "NORMAL": "96.20%",
+            "WARNING": "2.70%",
+            "CRITICAL": "1.10%"
+        },
+        {
+            "SENSOR_NAME": "Noise Frequency Spectrum",
+            "NORMAL": "94.95%",
+            "WARNING": "4.50%",
+            "CRITICAL": "0.55%"
+        },
+        {
+            "SENSOR_NAME": "Particle Count (e.g., for air quality or filtration monitoring)",
+            "NORMAL": "99.10%",
+            "WARNING": "0.85%",
+            "CRITICAL": "0.05%"
+        },
+        {
+            "SENSOR_NAME": "Carbon Dioxide (CO2) Content",
+            "NORMAL": "99.55%",
+            "WARNING": "0.45%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Bucket Position",
+            "NORMAL": "79.65%",
+            "WARNING": "20.35%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Bucket Angle",
+            "NORMAL": "85.65%",
+            "WARNING": "10.45%",
+            "CRITICAL": "3.90%"
+        },
+        {
+            "SENSOR_NAME": "Noise Level",
+            "NORMAL": "99.50%",
+            "WARNING": "0.45%",
+            "CRITICAL": "0.05%"
+        }
+    ],
+    "accuracyDeviationCNN": [
+        {
+            "SENSOR_NAME": "Engine Temperature",
+            "MAE": "0.3569",
+            "MSE": "0.2811",
+            "RMSE": "0.5302"
+        },
+        {
+            "SENSOR_NAME": "Engine RPM",
+            "MAE": "0.4461",
+            "MSE": "0.5161",
+            "RMSE": "0.7184"
+        },
+        {
+            "SENSOR_NAME": "Fuel Consumption",
+            "MAE": "0.3524",
+            "MSE": "0.2446",
+            "RMSE": "0.4945"
+        },
+        {
+            "SENSOR_NAME": "Hydraulic Flow Rate",
+            "MAE": "0.4400",
+            "MSE": "0.3939",
+            "RMSE": "0.6276"
+        },
+        {
+            "SENSOR_NAME": "Hydraulic Pressure",
+            "MAE": "0.2487",
+            "MSE": "0.1264",
+            "RMSE": "0.3555"
+        },
+        {
+            "SENSOR_NAME": "Hydraulic Temperature",
+            "MAE": "1.3573",
+            "MSE": "3.7100",
+            "RMSE": "1.9261"
+        },
+        {
+            "SENSOR_NAME": "Voltage Supply",
+            "MAE": "0.2106",
+            "MSE": "0.1187",
+            "RMSE": "0.3446"
+        },
+        {
+            "SENSOR_NAME": "Current Draw",
+            "MAE": "0.1871",
+            "MSE": "0.0927",
+            "RMSE": "0.3044"
+        },
+        {
+            "SENSOR_NAME": "Battery Voltage",
+            "MAE": "0.1750",
+            "MSE": "0.0766",
+            "RMSE": "0.2768"
+        },
+        {
+            "SENSOR_NAME": "Brake Pressure",
+            "MAE": "0.0847",
+            "MSE": "0.0148",
+            "RMSE": "0.1215"
+        },
+        {
+            "SENSOR_NAME": "Transmission Temperature",
+            "MAE": "1.4762",
+            "MSE": "4.1970",
+            "RMSE": "2.0487"
+        },
+        {
+            "SENSOR_NAME": "Brake Temperature",
+            "MAE": "1.5694",
+            "MSE": "4.8599",
+            "RMSE": "2.2045"
+        },
+        {
+            "SENSOR_NAME": "Coolant Flow Rate",
+            "MAE": "1.5208",
+            "MSE": "4.6056",
+            "RMSE": "2.1461"
+        },
+        {
+            "SENSOR_NAME": "Emission Levels (e.g., CO, NOx, SOx)",
+            "MAE": "0.0756",
+            "MSE": "0.0172",
+            "RMSE": "0.1311"
+        },
+        {
+            "SENSOR_NAME": "Fuel Pressure",
+            "MAE": "0.1172",
+            "MSE": "0.0282",
+            "RMSE": "0.1679"
+        },
+        {
+            "SENSOR_NAME": "Lubricant Pressure",
+            "MAE": "0.4037",
+            "MSE": "0.3721",
+            "RMSE": "0.6100"
+        },
+        {
+            "SENSOR_NAME": "Lubricant Temperature",
+            "MAE": "0.8023",
+            "MSE": "1.4732",
+            "RMSE": "1.2137"
+        },
+        {
+            "SENSOR_NAME": "Radiator Temperature",
+            "MAE": "0.0730",
+            "MSE": "0.0101",
+            "RMSE": "0.1004"
+        },
+        {
+            "SENSOR_NAME": "Exhaust Temperature (Post-CAT)",
+            "MAE": "0.0423",
+            "MSE": "0.0035",
+            "RMSE": "0.0595"
+        },
+        {
+            "SENSOR_NAME": "Exhaust Temperature (Pre-CAT)",
+            "MAE": "0.0951",
+            "MSE": "0.0171",
+            "RMSE": "0.1308"
+        },
+        {
+            "SENSOR_NAME": "Exhaust Gas Flow Rate",
+            "MAE": "0.0828",
+            "MSE": "0.0131",
+            "RMSE": "0.1145"
+        },
+        {
+            "SENSOR_NAME": "Air Intake Temperature",
+            "MAE": "0.0597",
+            "MSE": "0.0067",
+            "RMSE": "0.0819"
+        },
+        {
+            "SENSOR_NAME": "Air Flow Rate",
+            "MAE": "0.1307",
+            "MSE": "0.1003",
+            "RMSE": "0.3166"
+        },
+        {
+            "SENSOR_NAME": "Steering Pressure",
+            "MAE": "0.1523",
+            "MSE": "0.1296",
+            "RMSE": "0.3600"
+        },
+        {
+            "SENSOR_NAME": "Oil Temperature",
+            "MAE": "0.1967",
+            "MSE": "0.2791",
+            "RMSE": "0.5283"
+        },
+        {
+            "SENSOR_NAME": "Oil Pressure",
+            "MAE": "5.2471",
+            "MSE": "53.7020",
+            "RMSE": "7.3282"
+        },
+        {
+            "SENSOR_NAME": "Air Pressure",
+            "MAE": "0.2490",
+            "MSE": "0.1793",
+            "RMSE": "0.4234"
+        },
+        {
+            "SENSOR_NAME": "Torque (Engine)",
+            "MAE": "0.3993",
+            "MSE": "0.3057",
+            "RMSE": "0.5529"
+        },
+        {
+            "SENSOR_NAME": "Torque (Drive Train)",
+            "MAE": "0.5578",
+            "MSE": "0.6053",
+            "RMSE": "0.7780"
+        },
+        {
+            "SENSOR_NAME": "Fluid hydraulic Rate",
+            "MAE": "1.0310",
+            "MSE": "2.2097",
+            "RMSE": "1.4865"
+        },
+        {
+            "SENSOR_NAME": "Transmission Oil Pressure",
+            "MAE": "0.8474",
+            "MSE": "4.0249",
+            "RMSE": "2.0062"
+        },
+        {
+            "SENSOR_NAME": "Transmission Oil Temperature",
+            "MAE": "0.5462",
+            "MSE": "0.5679",
+            "RMSE": "0.7536"
+        },
+        {
+            "SENSOR_NAME": "Exhaust Gas Temperature",
+            "MAE": "1.0535",
+            "MSE": "2.2172",
+            "RMSE": "1.4890"
+        },
+        {
+            "SENSOR_NAME": "Pump Pressure",
+            "MAE": "1.2572",
+            "MSE": "2.9965",
+            "RMSE": "1.7310"
+        },
+        {
+            "SENSOR_NAME": "Oxygen Content",
+            "MAE": "1.4442",
+            "MSE": "7.8315",
+            "RMSE": "2.7985"
+        },
+        {
+            "SENSOR_NAME": "Fuel Flow Rate (for accurate consumption monitoring)",
+            "MAE": "5.1712",
+            "MSE": "50.0915",
+            "RMSE": "7.0775"
+        },
+        {
+            "SENSOR_NAME": "Cabin Temperature",
+            "MAE": "1.0130",
+            "MSE": "2.1165",
+            "RMSE": "1.4548"
+        },
+        {
+            "SENSOR_NAME": "Vibration Level",
+            "MAE": "2.3860",
+            "MSE": "12.0166",
+            "RMSE": "3.4665"
+        },
+        {
+            "SENSOR_NAME": "Load Weight",
+            "MAE": "3.9433",
+            "MSE": "34.0729",
+            "RMSE": "5.8372"
+        },
+        {
+            "SENSOR_NAME": "Noise Frequency Spectrum",
+            "MAE": "4.8086",
+            "MSE": "43.5497",
+            "RMSE": "6.5992"
+        },
+        {
+            "SENSOR_NAME": "Particle Count (e.g., for air quality or filtration monitoring)",
+            "MAE": "4.2356",
+            "MSE": "37.1925",
+            "RMSE": "6.0986"
+        },
+        {
+            "SENSOR_NAME": "Carbon Dioxide (CO2) Content",
+            "MAE": "2.0438",
+            "MSE": "11.4608",
+            "RMSE": "3.3854"
+        },
+        {
+            "SENSOR_NAME": "Bucket Position",
+            "MAE": "6.4716",
+            "MSE": "81.1576",
+            "RMSE": "9.0088"
+        },
+        {
+            "SENSOR_NAME": "Bucket Angle",
+            "MAE": "5.6289",
+            "MSE": "61.4468",
+            "RMSE": "7.8388"
+        },
+        {
+            "SENSOR_NAME": "Noise Level",
+            "MAE": "2.0935",
+            "MSE": "8.8562",
+            "RMSE": "2.9759"
+        }
+    ],
+    "statusOnPercentageLSTM": [
+        {
+            "SENSOR_NAME": "Engine Temperature",
+            "NORMAL": "99.05%",
+            "WARNING": "0.80%",
+            "CRITICAL": "0.15%"
+        },
+        {
+            "SENSOR_NAME": "Engine RPM",
+            "NORMAL": "99.65%",
+            "WARNING": "0.30%",
+            "CRITICAL": "0.05%"
+        },
+        {
+            "SENSOR_NAME": "Fuel Consumption",
+            "NORMAL": "100.00%",
+            "WARNING": "0.00%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Hydraulic Flow Rate",
+            "NORMAL": "99.95%",
+            "WARNING": "0.05%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Hydraulic Pressure",
+            "NORMAL": "99.45%",
+            "WARNING": "0.20%",
+            "CRITICAL": "0.35%"
+        },
+        {
+            "SENSOR_NAME": "Hydraulic Temperature",
+            "NORMAL": "100.00%",
+            "WARNING": "0.00%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Voltage Supply",
+            "NORMAL": "41.40%",
+            "WARNING": "58.60%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Current Draw",
+            "NORMAL": "98.60%",
+            "WARNING": "1.40%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Battery Voltage",
+            "NORMAL": "97.95%",
+            "WARNING": "2.05%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Brake Pressure",
+            "NORMAL": "100.00%",
+            "WARNING": "0.00%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Transmission Temperature",
+            "NORMAL": "99.30%",
+            "WARNING": "0.65%",
+            "CRITICAL": "0.05%"
+        },
+        {
+            "SENSOR_NAME": "Brake Temperature",
+            "NORMAL": "100.00%",
+            "WARNING": "0.00%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Coolant Flow Rate",
+            "NORMAL": "100.00%",
+            "WARNING": "0.00%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Emission Levels (e.g., CO, NOx, SOx)",
+            "NORMAL": "100.00%",
+            "WARNING": "0.00%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Fuel Pressure",
+            "NORMAL": "100.00%",
+            "WARNING": "0.00%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Lubricant Pressure",
+            "NORMAL": "99.90%",
+            "WARNING": "0.05%",
+            "CRITICAL": "0.05%"
+        },
+        {
+            "SENSOR_NAME": "Lubricant Temperature",
+            "NORMAL": "99.90%",
+            "WARNING": "0.10%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Radiator Temperature",
+            "NORMAL": "98.15%",
+            "WARNING": "1.85%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Exhaust Temperature (Post-CAT)",
+            "NORMAL": "99.70%",
+            "WARNING": "0.30%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Exhaust Temperature (Pre-CAT)",
+            "NORMAL": "96.85%",
+            "WARNING": "3.15%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Exhaust Gas Flow Rate",
+            "NORMAL": "100.00%",
+            "WARNING": "0.00%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Air Intake Temperature",
+            "NORMAL": "100.00%",
+            "WARNING": "0.00%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Air Flow Rate",
+            "NORMAL": "99.95%",
+            "WARNING": "0.00%",
+            "CRITICAL": "0.05%"
+        },
+        {
+            "SENSOR_NAME": "Steering Pressure",
+            "NORMAL": "99.95%",
+            "WARNING": "0.05%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Oil Temperature",
+            "NORMAL": "100.00%",
+            "WARNING": "0.00%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Oil Pressure",
+            "NORMAL": "44.45%",
+            "WARNING": "33.05%",
+            "CRITICAL": "22.50%"
+        },
+        {
+            "SENSOR_NAME": "Air Pressure",
+            "NORMAL": "100.00%",
+            "WARNING": "0.00%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Torque (Engine)",
+            "NORMAL": "99.95%",
+            "WARNING": "0.05%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Torque (Drive Train)",
+            "NORMAL": "100.00%",
+            "WARNING": "0.00%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Fluid hydraulic Rate",
+            "NORMAL": "97.20%",
+            "WARNING": "2.60%",
+            "CRITICAL": "0.20%"
+        },
+        {
+            "SENSOR_NAME": "Transmission Oil Pressure",
+            "NORMAL": "11.00%",
+            "WARNING": "8.65%",
+            "CRITICAL": "80.35%"
+        },
+        {
+            "SENSOR_NAME": "Transmission Oil Temperature",
+            "NORMAL": "99.90%",
+            "WARNING": "0.10%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Exhaust Gas Temperature",
+            "NORMAL": "100.00%",
+            "WARNING": "0.00%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Pump Pressure",
+            "NORMAL": "100.00%",
+            "WARNING": "0.00%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Oxygen Content",
+            "NORMAL": "100.00%",
+            "WARNING": "0.00%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Fuel Flow Rate (for accurate consumption monitoring)",
+            "NORMAL": "97.00%",
+            "WARNING": "2.10%",
+            "CRITICAL": "0.90%"
+        },
+        {
+            "SENSOR_NAME": "Cabin Temperature",
+            "NORMAL": "96.20%",
+            "WARNING": "3.80%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Vibration Level",
+            "NORMAL": "99.25%",
+            "WARNING": "0.75%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Load Weight",
+            "NORMAL": "97.55%",
+            "WARNING": "1.35%",
+            "CRITICAL": "1.10%"
+        },
+        {
+            "SENSOR_NAME": "Noise Frequency Spectrum",
+            "NORMAL": "98.65%",
+            "WARNING": "1.05%",
+            "CRITICAL": "0.30%"
+        },
+        {
+            "SENSOR_NAME": "Particle Count (e.g., for air quality or filtration monitoring)",
+            "NORMAL": "99.45%",
+            "WARNING": "0.50%",
+            "CRITICAL": "0.05%"
+        },
+        {
+            "SENSOR_NAME": "Carbon Dioxide (CO2) Content",
+            "NORMAL": "99.55%",
+            "WARNING": "0.45%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Bucket Position",
+            "NORMAL": "90.10%",
+            "WARNING": "9.90%",
+            "CRITICAL": "0.00%"
+        },
+        {
+            "SENSOR_NAME": "Bucket Angle",
+            "NORMAL": "84.05%",
+            "WARNING": "12.15%",
+            "CRITICAL": "3.80%"
+        },
+        {
+            "SENSOR_NAME": "Noise Level",
+            "NORMAL": "99.50%",
+            "WARNING": "0.45%",
+            "CRITICAL": "0.05%"
+        }
+    ],
+    "accuracyDeviationLSTM": [
+        {
+            "SENSOR_NAME": "Engine Temperature",
+            "MAE": "0.1418",
+            "MSE": "0.0541",
+            "RMSE": "0.2327"
+        },
+        {
+            "SENSOR_NAME": "Engine RPM",
+            "MAE": "0.0819",
+            "MSE": "0.0146",
+            "RMSE": "0.1208"
+        },
+        {
+            "SENSOR_NAME": "Fuel Consumption",
+            "MAE": "0.0632",
+            "MSE": "0.0078",
+            "RMSE": "0.0886"
+        },
+        {
+            "SENSOR_NAME": "Hydraulic Flow Rate",
+            "MAE": "0.1634",
+            "MSE": "0.0453",
+            "RMSE": "0.2129"
+        },
+        {
+            "SENSOR_NAME": "Hydraulic Pressure",
+            "MAE": "0.1860",
+            "MSE": "0.0732",
+            "RMSE": "0.2706"
+        },
+        {
+            "SENSOR_NAME": "Hydraulic Temperature",
+            "MAE": "0.7318",
+            "MSE": "1.0866",
+            "RMSE": "1.0424"
+        },
+        {
+            "SENSOR_NAME": "Voltage Supply",
+            "MAE": "0.0825",
+            "MSE": "0.0173",
+            "RMSE": "0.1313"
+        },
+        {
+            "SENSOR_NAME": "Current Draw",
+            "MAE": "0.0502",
+            "MSE": "0.0067",
+            "RMSE": "0.0820"
+        },
+        {
+            "SENSOR_NAME": "Battery Voltage",
+            "MAE": "0.0614",
+            "MSE": "0.0091",
+            "RMSE": "0.0954"
+        },
+        {
+            "SENSOR_NAME": "Brake Pressure",
+            "MAE": "0.0628",
+            "MSE": "0.0088",
+            "RMSE": "0.0936"
+        },
+        {
+            "SENSOR_NAME": "Transmission Temperature",
+            "MAE": "1.3083",
+            "MSE": "3.2089",
+            "RMSE": "1.7913"
+        },
+        {
+            "SENSOR_NAME": "Brake Temperature",
+            "MAE": "1.5622",
+            "MSE": "4.1540",
+            "RMSE": "2.0381"
+        },
+        {
+            "SENSOR_NAME": "Coolant Flow Rate",
+            "MAE": "1.1457",
+            "MSE": "2.5843",
+            "RMSE": "1.6076"
+        },
+        {
+            "SENSOR_NAME": "Emission Levels (e.g., CO, NOx, SOx)",
+            "MAE": "0.0624",
+            "MSE": "0.0128",
+            "RMSE": "0.1132"
+        },
+        {
+            "SENSOR_NAME": "Fuel Pressure",
+            "MAE": "0.1482",
+            "MSE": "0.0408",
+            "RMSE": "0.2020"
+        },
+        {
+            "SENSOR_NAME": "Lubricant Pressure",
+            "MAE": "0.3047",
+            "MSE": "0.2220",
+            "RMSE": "0.4712"
+        },
+        {
+            "SENSOR_NAME": "Lubricant Temperature",
+            "MAE": "0.6224",
+            "MSE": "0.9526",
+            "RMSE": "0.9760"
+        },
+        {
+            "SENSOR_NAME": "Radiator Temperature",
+            "MAE": "0.0576",
+            "MSE": "0.0064",
+            "RMSE": "0.0803"
+        },
+        {
+            "SENSOR_NAME": "Exhaust Temperature (Post-CAT)",
+            "MAE": "0.1558",
+            "MSE": "0.0311",
+            "RMSE": "0.1763"
+        },
+        {
+            "SENSOR_NAME": "Exhaust Temperature (Pre-CAT)",
+            "MAE": "0.0931",
+            "MSE": "0.0167",
+            "RMSE": "0.1293"
+        },
+        {
+            "SENSOR_NAME": "Exhaust Gas Flow Rate",
+            "MAE": "0.2848",
+            "MSE": "0.1060",
+            "RMSE": "0.3256"
+        },
+        {
+            "SENSOR_NAME": "Air Intake Temperature",
+            "MAE": "0.0705",
+            "MSE": "0.0085",
+            "RMSE": "0.0920"
+        },
+        {
+            "SENSOR_NAME": "Air Flow Rate",
+            "MAE": "0.1336",
+            "MSE": "0.0586",
+            "RMSE": "0.2420"
+        },
+        {
+            "SENSOR_NAME": "Steering Pressure",
+            "MAE": "0.1131",
+            "MSE": "0.0569",
+            "RMSE": "0.2386"
+        },
+        {
+            "SENSOR_NAME": "Oil Temperature",
+            "MAE": "0.1109",
+            "MSE": "0.0593",
+            "RMSE": "0.2435"
+        },
+        {
+            "SENSOR_NAME": "Oil Pressure",
+            "MAE": "3.0470",
+            "MSE": "20.1973",
+            "RMSE": "4.4941"
+        },
+        {
+            "SENSOR_NAME": "Air Pressure",
+            "MAE": "0.2260",
+            "MSE": "0.1283",
+            "RMSE": "0.3582"
+        },
+        {
+            "SENSOR_NAME": "Torque (Engine)",
+            "MAE": "0.2978",
+            "MSE": "0.1721",
+            "RMSE": "0.4148"
+        },
+        {
+            "SENSOR_NAME": "Torque (Drive Train)",
+            "MAE": "0.4207",
+            "MSE": "0.3430",
+            "RMSE": "0.5856"
+        },
+        {
+            "SENSOR_NAME": "Fluid hydraulic Rate",
+            "MAE": "0.9061",
+            "MSE": "1.7065",
+            "RMSE": "1.3063"
+        },
+        {
+            "SENSOR_NAME": "Transmission Oil Pressure",
+            "MAE": "0.9863",
+            "MSE": "5.2181",
+            "RMSE": "2.2843"
+        },
+        {
+            "SENSOR_NAME": "Transmission Oil Temperature",
+            "MAE": "0.3840",
+            "MSE": "0.2761",
+            "RMSE": "0.5254"
+        },
+        {
+            "SENSOR_NAME": "Exhaust Gas Temperature",
+            "MAE": "0.7660",
+            "MSE": "1.2038",
+            "RMSE": "1.0972"
+        },
+        {
+            "SENSOR_NAME": "Pump Pressure",
+            "MAE": "1.2020",
+            "MSE": "2.6873",
+            "RMSE": "1.6393"
+        },
+        {
+            "SENSOR_NAME": "Oxygen Content",
+            "MAE": "0.5722",
+            "MSE": "1.6047",
+            "RMSE": "1.2668"
+        },
+        {
+            "SENSOR_NAME": "Fuel Flow Rate (for accurate consumption monitoring)",
+            "MAE": "3.6643",
+            "MSE": "27.4138",
+            "RMSE": "5.2358"
+        },
+        {
+            "SENSOR_NAME": "Cabin Temperature",
+            "MAE": "0.4320",
+            "MSE": "0.3300",
+            "RMSE": "0.5745"
+        },
+        {
+            "SENSOR_NAME": "Vibration Level",
+            "MAE": "1.8301",
+            "MSE": "5.8276",
+            "RMSE": "2.4140"
+        },
+        {
+            "SENSOR_NAME": "Load Weight",
+            "MAE": "3.0053",
+            "MSE": "22.6076",
+            "RMSE": "4.7547"
+        },
+        {
+            "SENSOR_NAME": "Noise Frequency Spectrum",
+            "MAE": "3.8235",
+            "MSE": "32.2984",
+            "RMSE": "5.6832"
+        },
+        {
+            "SENSOR_NAME": "Particle Count (e.g., for air quality or filtration monitoring)",
+            "MAE": "3.1801",
+            "MSE": "20.2328",
+            "RMSE": "4.4981"
+        },
+        {
+            "SENSOR_NAME": "Carbon Dioxide (CO2) Content",
+            "MAE": "1.7234",
+            "MSE": "7.2428",
+            "RMSE": "2.6912"
+        },
+        {
+            "SENSOR_NAME": "Bucket Position",
+            "MAE": "4.3820",
+            "MSE": "40.1552",
+            "RMSE": "6.3368"
+        },
+        {
+            "SENSOR_NAME": "Bucket Angle",
+            "MAE": "3.8506",
+            "MSE": "32.9176",
+            "RMSE": "5.7374"
+        },
+        {
+            "SENSOR_NAME": "Noise Level",
+            "MAE": "1.6386",
+            "MSE": "5.7543",
+            "RMSE": "2.3988"
+        }
+    ],
+    "typeOfWorkDifficulty": 0.9,
+    "typeOfVehicle": 446284,
+    "title": "Develon DK225"
+}

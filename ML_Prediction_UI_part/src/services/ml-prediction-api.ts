@@ -21,13 +21,13 @@ export class MlPredictionApiService {
     }
 
     postPrediction(body: MlPredictionBody): Observable<MlPredictionResponse> {
-        body.fields = this.removeEmpty(body.fields);
+        // body.fields = this.removeEmpty(body.fields);
         console.log(body);
         return this.http.post<MlPredictionResponse>(`${this.url}/prediction`, body, {headers : new HttpHeaders({ 'Content-Type': 'application/json' })});
     }
 
-    private removeEmpty(obj: any): any{
-        Object.keys(obj).forEach((k) => (!obj[k] && obj[k] !== undefined) && delete obj[k]);
-        return obj;
-      };
+    // private removeEmpty(obj: any): any{
+    //     Object.keys(obj).forEach((k) => (!obj[k] && obj[k] !== undefined) && delete obj[k]);
+    //     return obj;
+    //   };
 }

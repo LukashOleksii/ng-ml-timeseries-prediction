@@ -5,12 +5,20 @@ import json
 from sklearn.preprocessing import MinMaxScaler
 from datetime import datetime
 from sklearn.preprocessing import PolynomialFeatures
+import os
 
 import missingno as msno
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 from sklearn.model_selection import train_test_split
-# import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Conv1D, MaxPooling1D, Flatten, Dense, BatchNormalization, Dropout
+from tensorflow.keras import optimizers
+import tensorflow as tf
+
+#
 # from tensorflow.keras.models import Sequential
 # from tensorflow.keras.layers import Dense, Dropout
 # from tensorflow.keras.layers import LSTM, Conv1D
@@ -28,65 +36,98 @@ SENSORS_LABELS = ['Engine Temperature', 'Engine RPM', 'Fuel Consumption', 'Hydra
 
 class Process:
   def __init__(self, data):
-    self.typeOfWorkDifficulty = data['typeOfWorkDifficulty']
-    self.typeOfVehicle = data['typeOfVehicle']
+    self.typeOfWorkDifficulty = data['workType']
+    self.titleOfVehicle = data['title']
+    self.typeOfVehicle = data['vehicleType']
     self.database = pd.read_csv('all_final_data.csv')
 
   def predict(self):
-    pass
-    cnn_sensors_statuses = pd.DataFrame(columns=labels)
-    cnn_sensors_predict = pd.DataFrame(columns=labels)
+    # pass
+
+    database = self.database
+    typeOfWorkDifficulty = self.typeOfWorkDifficulty
+    typeOfVehicle = self.typeOfVehicle
+    titleOfVehicle = self.titleOfVehicle
+
+    cnn_sensors_statuses = pd.DataFrame(columns=SENSORS_LABELS)
+    cnn_sensors_predict = pd.DataFrame(columns=SENSORS_LABELS)
     cnn_statuses_on_percentage = pd.DataFrame(columns=['SENSOR_NAME', 'NORMAL', 'WARNING', 'CRITICAL'])
     cnn_accuracy = pd.DataFrame(columns=['SENSOR_NAME', 'MAE', 'MSE', 'RMSE'])
 
     model_type = 'CNN'
-    for sensor in sensor_labels:
-      cnn_sensors_predict[sensor], cnn_statuses_on_percentage.loc[len(cnn_statuses_on_percentage)], cnn_accuracy.loc[len(cnn_accuracy)] = __predict_values(database, cnn_sensors_statuses, model_type, sensor)
-    #   cnn_statuses_on_percentage.loc[len(cnn_statuses_on_percentage)] = __check_statuses_on_percentage(cnn_sensors_statuses[sensor], sensor)
+    for sensor in SENSORS_LABELS:
+      cnn_sensors_predict[sensor], cnn_statuses_on_percentage.loc[len(cnn_statuses_on_percentage)], cnn_accuracy.loc[len(cnn_accuracy)] = self.predict_values(database, cnn_sensors_statuses, model_type, sensor)
 
-    lstm_sensors_statuses = pd.DataFrame(columns=labels)
-    lstm_sensors_predict = pd.DataFrame(columns=labels)
+    lstm_sensors_statuses = pd.DataFrame(columns=SENSORS_LABELS)
+    lstm_sensors_predict = pd.DataFrame(columns=SENSORS_LABELS)
     lstm_statuses_on_percentage = pd.DataFrame(columns=['SENSOR_NAME', 'NORMAL', 'WARNING', 'CRITICAL'])
     lstm_accuracy = pd.DataFrame(columns=['SENSOR_NAME', 'MAE', 'MSE', 'RMSE'])
 
 
     model_type = 'LSTM'
-    for sensor in sensor_labels:
-      lstm_sensors_predict[sensor], lstm_statuses_on_percentage.loc[len(lstm_statuses_on_percentage)], lstm_accuracy.loc[len(lstm_accuracy)] = __predict_values(database, lstm_sensors_statuses, model_type, sensor)
-    #   lstm_statuses_on_percentage.loc[len(lstm_statuses_on_percentage)] = __check_statuses_on_percentage(cnn_sensors_statuses[sensor], sensor)
-
-    # results = {
-    #   "label" : SENSORS_LABELS,
-    #   "statusOnPercentageCNN" : ,
-    #   "accuracyDeviationCNN" : ,
-    #   "statusOnPercentageLSTM" : ,
-    #   "accuracyDeviationLSTM" :
-    # }
+    for sensor in SENSORS_LABELS:
+      lstm_sensors_predict[sensor], lstm_statuses_on_percentage.loc[len(lstm_statuses_on_percentage)], lstm_accuracy.loc[len(lstm_accuracy)] = self.predict_values(database, lstm_sensors_statuses, model_type, sensor)
 
     results = {
       "labels" : SENSORS_LABELS,
-      "models" : [
-        {
-          "CNN" : [
-            {
-              "statusOnPercentage" : cnn_statuses_on_percentage,
-              "accuracyDeviation" : cnn_accuracy
-            }
-          ],
-          "LSTM" : [
-            {
-              "statusOnPercentage" : lstm_statuses_on_percentage,
-              "accuracyDeviation" : lstm_accuracy
-            }
-          ]
-        }
-      ]
+      "statusOnPercentageCNN" : cnn_statuses_on_percentage,
+      "accuracyDeviationCNN" : cnn_accuracy,
+      "statusOnPercentageLSTM" : lstm_statuses_on_percentage,
+      "accuracyDeviationLSTM" : lstm_accuracy,
+      "typeOfWorkDifficulty" : typeOfWorkDifficulty,
+      "typeOfVehicle" : typeOfVehicle,
+      "title" : titleOfVehicle
     }
+
+    # results = {
+    #   "labels" : SENSORS_LABELS,
+    #   "models" : [
+    #     {
+    #       "CNN" : [
+    #         {
+    #           "statusOnPercentage" : cnn_statuses_on_percentage,
+    #           "accuracyDeviation" : cnn_accuracy,
+    #           "typeOfWorkDifficulty" : typeOfWorkDifficulty
+    #         }
+    #       ]
+    #       ,
+    #       "LSTM" : [
+    #         {
+    #           "statusOnPercentage" : lstm_statuses_on_percentage,
+    #           "accuracyDeviation" : lstm_accuracy,
+    #           "typeOfWorkDifficulty" : typeOfWorkDifficulty
+    #         }
+    #       ]
+    #     }
+    #   ]
+    # }
+
+    # Specify the file path
+    file_path = 'results.json'
+
+    # Convert DataFrames to lists of dictionaries
+    def convert_dataframe_to_dict(dataframe):
+        return dataframe.to_dict(orient='records')
+
+    results["statusOnPercentageCNN"] = convert_dataframe_to_dict(results["statusOnPercentageCNN"])
+    results["accuracyDeviationCNN"] = convert_dataframe_to_dict(results["accuracyDeviationCNN"])
+    results["statusOnPercentageLSTM"] = convert_dataframe_to_dict(results["statusOnPercentageLSTM"])
+    results["accuracyDeviationLSTM"] = convert_dataframe_to_dict(results["accuracyDeviationLSTM"])
+
+
+    # results["models"][0]["CNN"][0]["statusOnPercentage"] = convert_dataframe_to_dict(results["models"][0]["CNN"][0]["statusOnPercentage"])
+    # results["models"][0]["CNN"][0]["accuracyDeviation"] = convert_dataframe_to_dict(results["models"][0]["CNN"][0]["accuracyDeviation"])
+    # results["models"][0]["LSTM"][0]["statusOnPercentage"] = convert_dataframe_to_dict(results["models"][0]["LSTM"][0]["statusOnPercentage"])
+    # results["models"][0]["LSTM"][0]["accuracyDeviation"] = convert_dataframe_to_dict(results["models"][0]["LSTM"][0]["accuracyDeviation"])
+
+    # Write the dictionary to a JSON file
+    with open(file_path, 'w') as json_file:
+        json.dump(results, json_file, indent=4)
 
     return json.dumps(results)
 
-  def __predict_values(data, sensors_statuses, model, sensor, model_type):
-    model = joblib.load(f'{model_type}_sensors_models/{sensor}_{model_type}_model.sav') ###
+  def predict_values(self, data, sensors_statuses, model_type, sensor):
+
     split_d = data[['Date',  sensor]].copy()
     for_train = split_d[-20000:-2000]
     for_predict = split_d[-2000:]
@@ -100,9 +141,11 @@ class Process:
     window = 5
     lag_size = 60
 
-    predict_series = __series_to_supervised(for_predict, window=window, lag=lag_size)
+    predict_series = self.series_to_supervised(for_predict, window, lag_size)
     series = predict_series.drop(f'{sensor}(x+{lag_size})', axis=1)
     X_pred = series.values.reshape((series.shape[0], series.shape[1], 1))
+
+    model = joblib.load(f'models/{model_type}_v2/{sensor}_{model_type}_model.sav') ###
 
     pred = model.predict(X_pred).flatten()
 
@@ -110,17 +153,17 @@ class Process:
 
     predict[sensor][(window * lag_size) : (window * lag_size + len(pred)) ] = pred
 
-    check_model_accuracy = __check_accuracy(for_predict, predict[sensor])
+    check_model_accuracy = self.check_accuracy(sensor, for_predict, predict[sensor])
 
-    sensors_percentage_statuses = __check_status_sensor_pp2(split_d, predict, sensor)
+    sensors_percentage_statuses = self.check_status_sensor_pp2(split_d, predict, sensor, self.typeOfWorkDifficulty)
 
-    __pp2(for_train, split_d, sensor, predict, model_type) ###
+    self.pp2(for_train, split_d, sensor, predict, model_type, self.typeOfWorkDifficulty) ###
 
     return predict, sensors_percentage_statuses, check_model_accuracy
 
     #  ###
 
-  def __series_to_supervised(data, window=1, lag=1, dropnan=True):
+  def series_to_supervised(self, data, window, lag):
     cols, names = list(), list()
 
     for i in range(window, 0, -1):
@@ -136,12 +179,11 @@ class Process:
     agg = pd.concat(cols, axis=1)
     agg.columns = names
 
-    if dropnan:
-      agg.dropna(inplace=True)
+    agg.dropna(inplace=True)
 
     return agg
 
-  def __pp2(data, data_original, sensor, predicted, model_type, k = 1, lag = 0):
+  def pp2(self, data, data_original, sensor, predicted, model_type, k = 1, lag = 0):
     mean = data_original[sensor].mean()
     std = data_original[sensor].std()
 
@@ -158,15 +200,18 @@ class Process:
 
     plt.xlabel('Date and Time')
     plt.ylabel('Sensor Reading')
-    plt.title(sensor)
+    plt.title(f'{model_type} -- {sensor}')
     plt.legend(loc='best')
 
+    if not os.path.exists(model_type):
+      os.makedirs(model_type)
+
     plt.savefig(f'{model_type}/{sensor}.png')
-    plt.close(fig)
+    # plt.close(fig)
 
     # plt.show()
 
-  def __check_status_sensor_pp2(data, predicted, sensor, k = 1):
+  def check_status_sensor_pp2(self, data, predicted, sensor, k = 1):
     mean = data[sensor].mean()
     std = data[sensor].std()
 
@@ -180,13 +225,15 @@ class Process:
       else:
         status_sensor.append('CRITICAL')
 
-    statuses_on_percentage = __check_statuses_on_percentage(status_sensor, sensor)
+    # print(status_sensor)
+    statuses_on_percentage = self.check_statuses_on_percentage(status_sensor, sensor)
 
     return statuses_on_percentage
 
-  def __check_statuses_on_percentage(data, sensor):
-    normal_count = sum(1 for status in data[sensor] if status == "NORMAL")
-    warning_count = sum(1 for status in data[sensor] if status == "WARNING")
+  def check_statuses_on_percentage(self, data, sensor):
+    # print(data)
+    normal_count = sum(1 for status in data if status == "NORMAL")
+    warning_count = sum(1 for status in data if status == "WARNING")
 
     total = len(data)
 
@@ -194,11 +241,11 @@ class Process:
     percentage_warning = (warning_count / total) * 100
     percentage_critical = (total - normal_count - warning_count) / total * 100
 
-    print(f"______SENSOR: {sensor}___________")
+    print(f"_____________SENSOR: {sensor}_______________________")
     print(f"Percentage of NORMAL: {percentage_normal:.2f}%")
     print(f"Percentage of WARNING: {percentage_warning:.2f}%")
     print(f"Percentage of CRITICAL: {percentage_critical:.2f}%")
-    print('________________________________________________________\n')
+    print('______________________________________________________________________________________________________________________\n')
 
     data_percentage = {
       'SENSOR_NAME' : sensor,
@@ -209,13 +256,14 @@ class Process:
 
     return data_percentage
 
-  def __check_accuracy(real_data, predicted_data):
+  def check_accuracy(self, sensor, real_data, predicted_data):
 
     data_accuracy = {
       'SENSOR_NAME' : sensor,
-      'MAE' : f'{mean_absolute_error(real_data, predicted_data):.4f}%',
-      'MSE' : f'{mean_squared_error(real_data, predicted_data):.4f}%',
-      'RMSE' : f'{np.sqrt(mean_squared_error(real_data, predicted_data)):.4f}%'
+      'MAE' : f'{mean_absolute_error(real_data, predicted_data):.4f}',
+      'MSE' : f'{mean_squared_error(real_data, predicted_data):.4f}',
+      'RMSE' : f'{np.sqrt(mean_squared_error(real_data, predicted_data)):.4f}'
     }
 
     return data_accuracy
+

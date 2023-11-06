@@ -18,12 +18,26 @@ export interface MlPredictionInput {
     workType: WorkTypeField[]
 }
 
+// export interface MlPredictionResponse {
+//     labels: any,
+//     models: any
+// }
+
 export interface MlPredictionResponse {
-    result: { modelName: string, price: number, deviation: number }[]
+    labels: [],
+    statusOnPercentageCNN: any,
+    accuracyDeviationCNN: any,
+    statusOnPercentageLSTM: any,
+    accuracyDeviationLSTM: any,
+    typeOfWorkDifficulty: number,
+    typeOfVehicle: number,
+    title: string
+
 }
 
 
 export interface MlPredictionBody {
-    vehicleType: string,
-    fields: any
+    title: string,
+    vehicleType: number,
+    workType: number
 }

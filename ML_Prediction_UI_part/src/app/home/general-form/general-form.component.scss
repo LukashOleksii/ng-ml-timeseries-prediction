@@ -98,7 +98,14 @@
   width: 100%;
   height: 100%;
   .row {
-    width: 45%;
+    width: 55%;
     height: 100%;
   }
 }
+
+.first-row{
+  max-height: 580px;
+  overflow-y: auto;
+}
+
+.selected { background-color: rgba(36, 74, 96, 0.66) }

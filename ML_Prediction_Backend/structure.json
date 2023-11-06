@@ -6,56 +6,56 @@
                 "title" : "Caterpillar 320",
                 "identifier" : 244412,
                 "description" : "test",
-                "imagePath" : "/assets/photo/machinery_images/CAT_320.png"
+                "imagePath" : "/assets/photo/machinery_images/244412.png"
             },
             {
                 "title" : "Develon DK225",
                 "identifier" : 446284,
                 "description" : "test test",
-                "imagePath" : "/assets/photo/machinery_images/DEVELON_DK225.png"
+                "imagePath" : "/assets/photo/machinery_images/446284.png"
             },
             {
                 "title" : "Develon DK775",
                 "identifier" : 491625,
                 "description" : "test test test",
-                "imagePath" : "/assets/photo/machinery_images/DEVELON_DK775.png"
+                "imagePath" : "/assets/photo/machinery_images/491625.png"
             },
             {
                 "title" : "Caterpillar 320",
                 "identifier" : 533252,
                 "description" : "test",
-                "imagePath" : "/assets/photo/machinery_images/CAT_320.png"
+                "imagePath" : "/assets/photo/machinery_images/533252.png"
             },
             {
                 "title" : "Hitachi 470",
                 "identifier" : 335262,
                 "description" : "test test test test",
-                "imagePath" : "/assets/photo/machinery_images/HITACHI_470.png"
+                "imagePath" : "/assets/photo/machinery_images/335262.png"
             },
             {
                 "title" : "Develon DK225",
                 "identifier" : 952628,
                 "description" : "test test",
-                "imagePath" : "/assets/photo/machinery_images/DEVELON_DK225.png"
+                "imagePath" : "/assets/photo/machinery_images/952628.png"
             }
         ],
         "workType": [
             {
                 "title" : "Light type of work",
                 "description" : "test test",
-                "imagePath" : "/assets/photo/work_images/Ligth_work.png",
+                "imagePath" : "/assets/photo/work_images/1.png",
                 "difficultCoef": 1
             },
             {
                 "title" : "Medium type of work",
                 "description" : "test test test",
-                "imagePath" : "/assets/photo/work_images/Medium_work.png",
+                "imagePath" : "/assets/photo/work_images/0.9.png",
                 "difficultCoef": 0.9
             },
             {
                 "title" : "Hard type of work",
                 "description" : "test test test",
-                "imagePath" : "/assets/photo/work_images/Hard_work.png",
+                "imagePath" : "/assets/photo/work_images/0.85.png",
                 "difficultCoef": 0.85
             }
         ]
